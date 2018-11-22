@@ -1,0 +1,32 @@
+
+<!-- here is header -->
+<% include ./components/header %>
+
+<!-- here is jumbotron -->
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Welcome To CatPhotos</h1>
+        <p>View cut kitty photos from all over the world</p>
+        <a href="/CatPhotos/new" class="btn btn-primary">Add New Photo</a>
+    </div>
+</div>
+
+<!-- here is picture content -->
+<div class="container">
+    <div class="row">
+        <% data.forEach((item)=>{ %>
+        <div class="card col-4" style="width: 18rem;">
+            <a href= <%= "/CatPhotos/photos/" +item.id %> >
+                <img class="card-img-top" src=<%= item.PhotoUrl %> alt="#">
+                <div class="card-body">
+                    <h5 class="card-title"><%= item.name  %></h5>
+                </div>
+            </a>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+<!-- here is footer -->
+<% include ./components/footer %>
